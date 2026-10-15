@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792103245.86543 "presentation.tex" "presentation.pdf" "presentation" 1792103247.47024 2
+["pdflatex"] 1792107040.72479 "presentation.tex" "presentation.pdf" "presentation" 1792107041.89104 0
   "/home/yepez/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0700.600pk" 1792103247.31301 7604 9c7150ef02251426bebf5af04316f904 ""
   "/home/yepez/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/tcsx0700.600pk" 1792103247.11692 7524 1d658a556650ff3455158a77f7cab4fa ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss0700.tfm" 1775463327 1536 e5428b375c095aa4874fb47053e1d4fc ""
@@ -52,7 +52,6 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1775463327 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1775463327 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1775463327 32442 c975af247b6702f7ca0c299af3616b80 ""
-  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1775463327 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1775463327 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1775463327 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1775463327 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -224,10 +223,10 @@
   "Impliedvsrealizedvol.png" 1792103245.32267 284206 ac96a182bee7b25d8eb2dcbe7282bb72 ""
   "Iron Condor.png" 1792103245.32367 128282 6987d24037914a99604e2848f45114e2 ""
   "nvda_options_surface_2026-10-14_tikz.tex" 1792103245.32367 32459 926cad85b2ad8ad1ca885d958acb39c6 ""
-  "presentation.aux" 1792103246.91289 3016 0232c3112df7f75e63a063ba42705cfb "pdflatex"
-  "presentation.nav" 1792103246.91376 2043 632ca4d6d6bcc040fe926964d0a82aa6 "pdflatex"
-  "presentation.out" 1792103246.1942 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1792103245.33667 19055 9dc4accdefacac8ccdac4af0cc4c2734 ""
+  "presentation.aux" 1792107041.83537 3400 d35a4d136ca049981c9d11fde6dc3dca "pdflatex"
+  "presentation.nav" 1792107041.83634 2318 b1ea7ecebdfc0f6e57c46cc6e835a258 "pdflatex"
+  "presentation.out" 1792107041.83634 81 5bcea9cf7d2d9aece7cac4018e9f6c5b "pdflatex"
+  "presentation.tex" 1792107033.19321 22650 10262bf1d1c286b0e24e74a351b26ec6 ""
   "teamprogress.png" 1792103245.32767 77497 18f83fc7e9eee5da10bcbf4ce2425485 ""
   (generated)
   "presentation.aux"
