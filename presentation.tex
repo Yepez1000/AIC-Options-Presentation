@@ -328,6 +328,11 @@
 \begin{frame}{Practical Applications: The Options Chain Speaks}
 \end{frame}
 
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{teamprogress.png}
+\end{frame}
+
 \begin{frame}{Practical Applications: Reading an Options Surface}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.62\textwidth}
@@ -350,9 +355,43 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}{From the Volatility Surface to a Market-Implied PDF}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.64\textwidth}
+      \centering
+      \includegraphics[width=\linewidth,height=6.05cm,keepaspectratio]{nvda_market_distribution_2026-12-18.png}
+    \end{column}
+    \begin{column}{0.33\textwidth}
+      \scriptsize
+      \begin{block}{How the PDF was generated}
+        First, smooth implied volatility across strikes and use Black--Scholes to produce a call-price curve $C(K)$.
+        \[
+          q(K)=e^{rT}\frac{\partial^2 C}{\partial K^2}.
+        \]
+        Take the second derivative of the call-premium chain across strikes. After adjusting for discounting and normalizing the result, the curvature can be expressed as market-implied probabilities for different NVDA prices at expiration.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}[plain]
   \centering
-  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{teamprogress.png}
+  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{brkb_market_distribution_2026-12-18.png}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{intc_market_distribution_2026-12-18.png}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{mu_market_distribution_2026-12-18.png}
+\end{frame}
+
+\begin{frame}[plain]
+  \centering
+  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{adbe_market_distribution_2026-12-18.png}
 \end{frame}
 
 \begin{frame}{The Volatility Smirk: Why Downside Skew Exists}
