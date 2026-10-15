@@ -158,8 +158,6 @@
   \begin{center}
     \Large $\displaystyle q=\frac{S_0e^{rT}-S_d}{S_u-S_d}$.
   \end{center}
-  \vspace{0.3cm}
-  Interpretation:
 \end{frame}
 
 \begin{frame}{What Are Risk-Neutral Probabilities?}
@@ -244,6 +242,11 @@
   \begin{align*}
     \frac{\partial V}{\partial t}+\frac{1}{2}\sigma^2S^2\frac{\partial^2V}{\partial S^2}+rS\frac{\partial V}{\partial S}-rV=0.
   \end{align*}
+  Solving this equation gives the price of the call option:
+  \begin{center}
+    \Large $\displaystyle V_0=e^{-rT}\mathbb{E}^{\mathbb{Q}}[\operatorname{Payoff}(S_T)].$
+  \end{center}
+  \small For a call, $\operatorname{Payoff}(S_T)=\max(S_T-K,0)$, where $S_T$ comes from the assumed asset-price model.
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.52\textwidth}
       For a European call with no dividends,

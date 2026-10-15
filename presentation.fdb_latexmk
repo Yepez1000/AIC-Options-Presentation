@@ -1,5 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1792094485.49696 "presentation.tex" "presentation.pdf" "presentation" 1792094486.1175 0
+["pdflatex"] 1792103245.86543 "presentation.tex" "presentation.pdf" "presentation" 1792103247.47024 2
+  "/home/yepez/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0700.600pk" 1792103247.31301 7604 9c7150ef02251426bebf5af04316f904 ""
+  "/home/yepez/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/tcsx0700.600pk" 1792103247.11692 7524 1d658a556650ff3455158a77f7cab4fa ""
+  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss0700.tfm" 1775463327 1536 e5428b375c095aa4874fb47053e1d4fc ""
+  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcsx0700.tfm" 1775463327 1536 a02bb17bb94cbb9e9a924ee57db722f8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1775463327 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1775463327 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex9.tfm" 1775463327 996 a18840b13b499c08ac2de96a99eda4bc ""
@@ -49,6 +53,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1775463327 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb" 1775463327 32442 c975af247b6702f7ca0c299af3616b80 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1775463327 31764 459c573c03a4949a528c2cc7f557e217 ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1775463327 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1775463327 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1775463327 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1775463327 40635 c40361e206be584d448876bba8a64a3b ""
@@ -216,10 +221,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1775463327 43569 fd570f2fa160877d211e859f687312ba ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1791307351 30070 2c390b00126b1036e8876b6c3ea4d747 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1792073823 2328196 361cc132ab797febd092af4af989b8fc ""
-  "presentation.aux" 1792094486.0595 2109 2979b9e8e4fa267a2557952810574c09 "pdflatex"
-  "presentation.nav" 1792094486.06145 1388 37fb167c90003b6656a249083ce3750a "pdflatex"
-  "presentation.out" 1792094485.82587 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "presentation.tex" 1792094478.72275 11614 bdb85491a7c5f21d612cb7f109813c96 ""
+  "Impliedvsrealizedvol.png" 1792103245.32267 284206 ac96a182bee7b25d8eb2dcbe7282bb72 ""
+  "Iron Condor.png" 1792103245.32367 128282 6987d24037914a99604e2848f45114e2 ""
+  "nvda_options_surface_2026-10-14_tikz.tex" 1792103245.32367 32459 926cad85b2ad8ad1ca885d958acb39c6 ""
+  "presentation.aux" 1792103246.91289 3016 0232c3112df7f75e63a063ba42705cfb "pdflatex"
+  "presentation.nav" 1792103246.91376 2043 632ca4d6d6bcc040fe926964d0a82aa6 "pdflatex"
+  "presentation.out" 1792103246.1942 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "presentation.tex" 1792103245.33667 19055 9dc4accdefacac8ccdac4af0cc4c2734 ""
+  "teamprogress.png" 1792103245.32767 77497 18f83fc7e9eee5da10bcbf4ce2425485 ""
   (generated)
   "presentation.aux"
   "presentation.log"
