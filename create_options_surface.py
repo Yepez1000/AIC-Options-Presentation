@@ -243,16 +243,13 @@ def tikz_surface(curves) -> str:
         i = round(fraction * (steps - 1))
         x, y = project(i, 0, False)
         lines.append(rf"\node[below,font=\scriptsize,text=black] at ({x:.3f},{y - .12:.3f}) {{{xs[i]:.2f}}};")
-    for j, (expiry, dte, _) in enumerate(curves):
-        x, y = project(0, j, False)
-        lines.append(rf"\node[left,font=\tiny,text=black] at ({x - .04:.3f},{y - .11:.3f}) {{{expiry[5:]} ({dte}d)}};")
     for fraction in (0, 0.25, 0.5, 0.75, 1):
         value = low_z + fraction * (high_z - low_z)
         y = origin[1] + scale * 300 * fraction
         lines.append(rf"\node[left,font=\scriptsize,text=black] at ({origin[0] - .06:.3f},{y:.3f}) {{{value * 100:.0f}\%}};")
     lines.extend([
         r"\node[below,font=\small\bfseries] at (2.76,-.47) {Moneyness (strike / spot)};",
-        r"\node[rotate=90,font=\small\bfseries] at (-.63,1.35) {Implied volatility};",
+        r"\node[rotate=90,font=\small\bfseries] at (-.72,1.35) {IV};",
         r"\end{tikzpicture}",
     ])
     return "\n".join(lines) + "\n"

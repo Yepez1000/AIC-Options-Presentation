@@ -635,31 +635,31 @@ File: l3backend-xetex.def 2022-02-07 L3 backend support: XeTeX
 ) (presentation.aux)
 \openout1 = `presentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
-3.
+4.
  (ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -695,7 +695,7 @@ LaTeX Font Info:    ... okay on input line 43.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 43.
+Package hyperref Info: Link coloring OFF on input line 44.
 (nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (refcount.sty
@@ -705,9 +705,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count348
 )
-LaTeX Info: Redefining \ref on input line 43.
-LaTeX Info: Redefining \pageref on input line 43.
-LaTeX Info: Redefining \nameref on input line 43.
+LaTeX Info: Redefining \ref on input line 44.
+LaTeX Info: Redefining \pageref on input line 44.
+LaTeX Info: Redefining \nameref on input line 44.
  (presentation.out)
 (presentation.out)
 \@outlinefile=\write5
@@ -731,12 +731,12 @@ Dictionary: translator-numbers-dictionary, Language: English
 (translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (presentation.nav)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
 
  (umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 63.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
 
 
 (umsb.fd
@@ -762,7 +762,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ] [10
 
 ]
-Underfull \hbox (badness 10000) detected at line 255
+Underfull \hbox (badness 10000) detected at line 256
 [][][][][][][][][]
  []
 
@@ -774,7 +774,27 @@ Underfull \hbox (badness 10000) detected at line 255
 
 ] [14
 
-] (nvda_options_surface_2026-10-14_tikz.tex) [15
+] [15
+
+] (nvda_options_surface_2026-10-14_tikz.tex) [16
+
+]
+File: teamprogress.png Graphic file (type bmp)
+<teamprogress.png>
+
+[17
+
+] [18
+
+]
+File: Impliedvsrealizedvol.png Graphic file (type bmp)
+<Impliedvsrealizedvol.png>
+ [19
+
+]
+File: Iron Condor.png Graphic file (type bmp)
+<Iron Condor.png>
+ [20
 
 ]
 \tf@nav=\write6
@@ -786,9 +806,8 @@ Underfull \hbox (badness 10000) detected at line 255
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-
-(presentation.aux)
+ (presentation.aux)
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
-Output written on presentation.xdv (15 pages, 173900 bytes).
+Output written on presentation.xdv (20 pages, 227672 bytes).
