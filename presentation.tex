@@ -24,30 +24,14 @@
 \setbeamercolor{block body}{fg=black,bg=aggieLightGray}
 \setbeamercolor{itemize item}{fg=aggieMaroon}
 \setbeamercolor{itemize subitem}{fg=aggieMaroon}
-\setbeamercolor{footline}{fg=white,bg=aggieDarkMaroon}
 
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{items}[circle]
-\newcommand{\aggielogo}{%
-  \begin{tikzpicture}[baseline=-0.55ex]
-    \node[draw=white,line width=0.5pt,minimum width=1.5cm,minimum height=0.62cm,text=white,font=\bfseries\sffamily\scriptsize] {A\&M};
-  \end{tikzpicture}%
-}
 \setbeamertemplate{frametitle}{%
   \nointerlineskip
   \begin{beamercolorbox}[wd=\paperwidth,ht=0.82cm,dp=0.22cm,leftskip=0.65cm]{frametitle}%
     \usebeamerfont{frametitle}\insertframetitle
   \end{beamercolorbox}%
-}
-\setbeamertemplate{footline}{%
-  \leavevmode\hbox{%
-    \begin{beamercolorbox}[wd=.76\paperwidth,ht=0.38cm,dp=0.14cm,leftskip=.65cm]{footline}%
-      \aggielogo
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=.24\paperwidth,ht=0.38cm,dp=0.14cm,rightskip=.65cm plus 1fill]{footline}%
-      \scriptsize\insertframenumber\,/\,\inserttotalframenumber
-    \end{beamercolorbox}%
-  }\vskip0pt%
 }
 
 \title{Options Pricing}
@@ -95,10 +79,6 @@
       Suppose a stock trades today at $S_0$. At time $T$, it can be $S_u$ or $S_d$.
       \vspace{0.25cm}
       A claim $V$ written on the stock then pays $V_u$ or $V_d$.
-      \vspace{0.25cm}
-      \begin{block}{Key idea}
-        We have not assumed $V$ is a call or a put. We want a general method for pricing any financial claim.
-      \end{block}
     \end{column}
   \end{columns}
 \end{frame}
@@ -108,11 +88,10 @@
   \vspace{0.3cm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.47\textwidth}
-      \begin{block}{Replicating portfolio}
-        Hold $\Delta$ shares of stock and borrow $y$ dollars today at continuously compounded rate $r$.
-      \end{block}
+      Hold $\Delta$ shares of stock and borrow $y$ dollars today at continuously compounded rate $r$.
+      \vspace{0.2cm}
       \small
-      $\Delta S_t$ is the stock position; $y e^{rT}$ is the loan repayment at expiration.
+      $\Delta$ is the shares you have bought; $y$ is the amount of the loan.
     \end{column}
     \begin{column}{0.48\textwidth}
       \begin{align*}
@@ -121,10 +100,6 @@
       \end{align*}
     \end{column}
   \end{columns}
-  \vspace{0.2cm}
-  \begin{block}{Why is the loan term the same?}
-    The borrowing obligation is fixed in advance. It does not depend on whether the stock rises or falls.
-  \end{block}
 \end{frame}
 
 \begin{frame}{Solving for $\Delta$ and the Loan}
@@ -133,18 +108,9 @@
     \therefore\qquad \Delta &= \frac{V_u-V_d}{S_u-S_d}\\[0.15cm]
     y &= e^{-rT}(\Delta S_d-V_d)
   \end{align*}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.46\textwidth}
-      \begin{block}{$\Delta$ sets the difference}
-        It determines how many shares reproduce the gap between the two claim payoffs.
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{$y$ sets the level}
-        Borrowing shifts both portfolio payoffs by the same amount.
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{center}
+    $\Delta$ is the shares you have bought. \hspace{1cm} $y$ is the amount of the loan.
+  \end{center}
 \end{frame}
 
 \begin{frame}{No-Arbitrage: The Law of One Price}
@@ -155,12 +121,6 @@
   \begin{center}
     \Large $\displaystyle V_0 = \Delta S_0-y$
   \end{center}
-  \vspace{0.25cm}
-  If the claim and its replica had different prices, an investor could buy the cheaper one and sell the more expensive one. Future cash flows cancel, leaving a riskless profit today.
-  \vspace{0.3cm}
-  \begin{block}{Central insight}
-    Price an uncertain payoff by constructing an equivalent payoff from assets whose prices are already known.
-  \end{block}
 \end{frame}
 
 \begin{frame}{A One-Step Call Option Example}
@@ -197,9 +157,8 @@
   \begin{center}
     \Large $\displaystyle q=\frac{S_0e^{rT}-S_d}{S_u-S_d}$.
   \end{center}
-  \begin{block}{Interpretation}
-    The price has the form of a discounted expected payoff. The weights $q$ and $1-q$ are not an extra pricing assumption: they follow from the replicating portfolio.
-  \end{block}
+  \vspace{0.3cm}
+  Interpretation:
 \end{frame}
 
 \begin{frame}{What Are Risk-Neutral Probabilities?}
@@ -276,10 +235,6 @@
   \end{columns}
   \vspace{0.35cm}
   Under an appropriate parameterization, the binomial price converges to the Black--Scholes--Merton price as the number of steps grows.
-  \vspace{0.3cm}
-  \begin{block}{What does not change}
-    Replicate the claim, eliminate hedgeable risk, and use no-arbitrage to determine its price.
-  \end{block}
 \end{frame}
 
 \begin{frame}{Black--Scholes--Merton: Equation and Price}
@@ -296,39 +251,7 @@
         d_1&=\frac{\ln(S_0/K)+(r+\sigma^2/2)T}{\sigma\sqrt{T}},\quad d_2=d_1-\sigma\sqrt{T}.
       \end{align*}
     \end{column}
-    \begin{column}{0.43\textwidth}
-      \begin{block}{Terms in the PDE}
-        Time sensitivity, stock sensitivity, curvature, volatility, and risk-free financing.
-      \end{block}
-      \scriptsize Assumptions include frictionless trading, constant $r$ and $\sigma$, continuous hedging, lognormal dynamics, and no dividends.
-    \end{column}
   \end{columns}
-\end{frame}
-
-\begin{frame}{What Does Black--Scholes Actually Tell Us?}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{It calculates}
-        A theoretical arbitrage-free option premium under its assumptions.
-      \end{block}
-      \vspace{0.25cm}
-      \begin{align*}
-        C_T&=\max(S_T-K,0),\\
-        P_T&=\max(K-S_T,0).
-      \end{align*}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{It does not calculate}
-        A prediction of the realized stock price at expiration.
-      \end{block}
-      \vspace{0.25cm}
-      Terminal payoff depends on the unknown $S_T$. A traded market premium can differ from the model price.
-    \end{column}
-  \end{columns}
-  \vspace{0.3cm}
-  \begin{block}{Keep the terms separate}
-    The premium is the upfront price of the contract, not a fee added to its theoretical value.
-  \end{block}
 \end{frame}
 
 \begin{frame}{The Greeks: Sensitivities of Option Value}

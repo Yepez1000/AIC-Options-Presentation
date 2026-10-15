@@ -1,4 +1,4 @@
-PWD /home/yepez/School/AICQuant
+PWD /home/yepez/School/AICQuant/Options Presentation
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT presentation.tex
@@ -333,9 +333,6 @@ INPUT ./presentation.nav
 INPUT presentation.nav
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -368,6 +365,14 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
@@ -379,13 +384,6 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 OUTPUT presentation.nav
 OUTPUT presentation.toc
 OUTPUT presentation.snm
