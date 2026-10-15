@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792107040.72479 "presentation.tex" "presentation.pdf" "presentation" 1792107041.89104 0
+["pdflatex"] 1792107283.28188 "presentation.tex" "presentation.pdf" "presentation" 1792107284.44954 0
   "/home/yepez/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/tcss0700.600pk" 1792103247.31301 7604 9c7150ef02251426bebf5af04316f904 ""
   "/home/yepez/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/tcsx0700.600pk" 1792103247.11692 7524 1d658a556650ff3455158a77f7cab4fa ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcss0700.tfm" 1775463327 1536 e5428b375c095aa4874fb47053e1d4fc ""
@@ -223,10 +223,10 @@
   "Impliedvsrealizedvol.png" 1792103245.32267 284206 ac96a182bee7b25d8eb2dcbe7282bb72 ""
   "Iron Condor.png" 1792103245.32367 128282 6987d24037914a99604e2848f45114e2 ""
   "nvda_options_surface_2026-10-14_tikz.tex" 1792103245.32367 32459 926cad85b2ad8ad1ca885d958acb39c6 ""
-  "presentation.aux" 1792107041.83537 3400 d35a4d136ca049981c9d11fde6dc3dca "pdflatex"
-  "presentation.nav" 1792107041.83634 2318 b1ea7ecebdfc0f6e57c46cc6e835a258 "pdflatex"
-  "presentation.out" 1792107041.83634 81 5bcea9cf7d2d9aece7cac4018e9f6c5b "pdflatex"
-  "presentation.tex" 1792107033.19321 22650 10262bf1d1c286b0e24e74a351b26ec6 ""
+  "presentation.aux" 1792107284.39456 3271 345439793f28177f9a74df93a00296fc "pdflatex"
+  "presentation.nav" 1792107284.39553 2225 c3422bcd94341bfbb86c2e279a23b706 "pdflatex"
+  "presentation.out" 1792107284.39553 81 5bcea9cf7d2d9aece7cac4018e9f6c5b "pdflatex"
+  "presentation.tex" 1792107275.75653 22573 d2d4a4037effde11fcd7b7e779992186 ""
   "teamprogress.png" 1792103245.32767 77497 18f83fc7e9eee5da10bcbf4ce2425485 ""
   (generated)
   "presentation.aux"
