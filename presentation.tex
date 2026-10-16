@@ -45,47 +45,50 @@
 
 \begin{frame}{What Is an Option?}
   \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.58\textwidth}
-      \textbf{An option} gives its holder the \alert{right, not the obligation}, to transact in an underlying asset on specified terms.
+    \begin{column}{0.88\textwidth}
+      \textbf{An option} gives you the \alert{right, but not the obligation}, to buy or sell an asset at a predetermined price.
       \vspace{0.35cm}
       \begin{itemize}
-        \item \textbf{Call:} right to buy at the strike price $K$.
-        \item \textbf{Put:} right to sell at the strike price $K$.
-        \item \textbf{Expiration $T$:} last date the right can be exercised.
+         \item \textbf{Call:} right to buy at the strike price $K$.
+         \item \textbf{Put:} right to sell at the strike price $K$.
+         \item \textbf{Call payoff:} $\max(S_T-K,0)$.
+         \item \textbf{Put payoff:} $\max(K-S_T,0)$.
+         \item \textbf{Expiration $T$:} last date the right can be exercised.
         \item \textbf{Premium:} price paid today for the contract.
       \end{itemize}
-    \end{column}
-    \begin{column}{0.38\textwidth}
-      \begin{block}{Central question}
-        How much should someone pay today for a claim that provides a potentially uncertain payoff in the future?
-      \end{block}
+      \scriptsize Pricing examples will focus on European call options, which can be exercised only at expiration.
     \end{column}
   \end{columns}
 \end{frame}
 
-\begin{frame}{An Arbitrary Financial Claim}
+\begin{frame}{A Stock with Two Possible Futures}
   \begin{columns}[c,onlytextwidth]
-    \begin{column}{0.48\textwidth}
-      \begin{tikzpicture}[x=1cm,y=1cm,>=stealth]
-        \node (zero) at (0,0) {$S_0,\ V_0$};
-        \node (up) at (3,1.35) {$S_u,\ V_u$};
-        \node (down) at (3,-1.35) {$S_d,\ V_d$};
-        \draw[->,thick] (zero) -- (up);
-        \draw[->,thick] (zero) -- (down);
-        \node[aggieGray] at (1.45,0.95) {up state};
-        \node[aggieGray] at (1.45,-0.95) {down state};
+    \begin{column}{0.55\textwidth}
+      \centering
+      \begin{tikzpicture}[x=1cm,y=1cm,>=stealth,every node/.style={align=center,font=\small}]
+        \node[draw=aggieMaroon,rounded corners,minimum width=2.35cm,minimum height=0.85cm] (zero) at (0,0) {Stock today:\\$\$100$};
+        \node[draw=green!50!black,rounded corners,minimum width=3.35cm,minimum height=0.95cm,text=green!40!black] (up) at (4.3,1.55) {Stock rises to $\$120$\\$\rightarrow$ Call pays $\$20$};
+        \node[draw=aggieGray,rounded corners,minimum width=3.35cm,minimum height=0.95cm,text=aggieGray] (down) at (4.3,-1.55) {Stock falls to $\$80$\\$\rightarrow$ Call pays $\$0$};
+        \draw[->,very thick,green!50!black] (zero) -- (up);
+        \draw[->,very thick,aggieGray] (zero) -- (down);
       \end{tikzpicture}
+      \vspace{0.15cm}
+
+      \scriptsize Example: $\$100$ strike price, payoff measured at expiration.
     \end{column}
-    \begin{column}{0.48\textwidth}
-      Suppose a stock trades today at $S_0$. At time $T$, it can be $S_u$ or $S_d$.
-      \vspace{0.25cm}
-      A claim $V$ written on the stock then pays $V_u$ or $V_d$.
+    \begin{column}{0.40\textwidth}
+      We know what the option pays in each scenario. But what should we pay for it today?
+      \vspace{0.7cm}
+
+      \begin{center}
+        \Large Today's option price = ?
+      \end{center}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}{Replicating the Financial Claim}
-  Rather than price the claim directly, build a portfolio with exactly the same payoff in every state.
+  Rather than price the claim directly, build a portfolio with Stocks and Loans.
   \vspace{0.3cm}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.47\textwidth}
@@ -104,17 +107,34 @@
 \end{frame}
 
 \begin{frame}{Solving for $\Delta$ and the Loan}
-  \begin{align*}
-    V_u - V_d &= \Delta(S_u-S_d) \\[0.15cm]
-    \therefore\qquad \Delta &= \frac{V_u-V_d}{S_u-S_d}\\[0.15cm]
-    y &= e^{-rT}(\Delta S_d-V_d)
-  \end{align*}
-  \begin{center}
-    $\Delta$ is the shares you have bought. \hspace{1cm} $y$ is the amount of the loan.
-  \end{center}
+  \small
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.52\textwidth}
+      Subtract the down-state payoff from the up-state payoff:
+      \begin{align*}
+        V_u-V_d
+          &= (\Delta S_u-ye^{rT})-(\Delta S_d-ye^{rT})\\
+          &= \Delta S_u-\Delta S_d\\
+          &= \Delta(S_u-S_d).
+      \end{align*}
+      \begin{center}
+        $\displaystyle \Delta=\frac{V_u-V_d}{S_u-S_d}$
+      \end{center}
+    \end{column}
+    \begin{column}{0.43\textwidth}
+      Then use either state, for example the down state:
+      \begin{align*}
+        V_d&=\Delta S_d-ye^{rT}\\
+        ye^{rT}&=\Delta S_d-V_d\\
+        y&=e^{-rT}(\Delta S_d-V_d).
+      \end{align*}
+    \end{column}
+  \end{columns}
+  \vspace{0.15cm}
+  \centering $\Delta$ is the shares you have bought; $y$ is the amount of the loan.
 \end{frame}
 
-\begin{frame}{No-Arbitrage: The Law of One Price}
+\begin{frame}{No-Arbitrage:}
   \begin{block}{Portfolio lemma}
     If two portfolios have identical future payoffs in every state, then an arbitrage-free market must assign them the same price today.
   \end{block}
@@ -148,42 +168,51 @@
   \centering\textbf{The $\$10$ premium is paid today; $\$20$ or $\$0$ is paid at expiration.}
 \end{frame}
 
-\begin{frame}{From Replication to Risk-Neutral Pricing}
-  Insert the replicating portfolio into $V_0=\Delta S_0-y$:
+\begin{frame}{Substituting the Replicating Portfolio}
+  Start with the cost of the stock-and-loan portfolio:
   \begin{align*}
-    V_0 &= \Delta S_0-e^{-rT}(\Delta S_d-V_d)\\
-        &= e^{-rT}\left[qV_u+(1-q)V_d\right],
+    V_0
+      &= \Delta S_0-y\\
+      &= \Delta S_0-e^{-rT}(\Delta S_d-V_d)\\
+      &= e^{-rT}\left[\Delta(S_0e^{rT}-S_d)+V_d\right].
   \end{align*}
-  where
-  \begin{center}
-    \Large $\displaystyle q=\frac{S_0e^{rT}-S_d}{S_u-S_d}$.
-  \end{center}
-  \vspace{0.3cm}
-  Interpretation:
+  Now substitute $\displaystyle \Delta=\frac{V_u-V_d}{S_u-S_d}$:
+  \begin{align*}
+    V_0
+      &= e^{-rT}\left[\frac{S_0e^{rT}-S_d}{S_u-S_d}(V_u-V_d)+V_d\right]\\
+      &= e^{-rT}\left[qV_u+(1-q)V_d\right].
+  \end{align*}
+  \centering The stock-and-loan replica leads directly to a discounted, pricing-weighted payoff.
 \end{frame}
 
-\begin{frame}{What Are Risk-Neutral Probabilities?}
-  \begin{center}
-    \Large $\displaystyle S_0=e^{-rT}\left[qS_u+(1-q)S_d\right]$
-  \end{center}
-  The weights $q$ and $1-q$ make the stock's expected return equal to the risk-free rate.
-  \vspace{0.25cm}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.47\textwidth}
-      \begin{block}{Actual probabilities}
-        Describe beliefs about what will happen in the world.
-      \end{block}
+\begin{frame}{Pricing an Option Using Expected Payoffs}
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[x=1cm,y=0.85cm,>=stealth,every node/.style={font=\small,align=center}]
+        \node[draw=aggieMaroon,rounded corners,minimum width=1.8cm,minimum height=0.8cm] (zero) at (0,0) {$S_0=\$100$};
+        \node[draw=green!50!black,rounded corners,minimum width=2.55cm,minimum height=0.9cm,text=green!40!black] (up) at (3.8,1.35) {$S_T=\$120$\\Call payoff $=\$20$};
+        \node[draw=aggieGray,rounded corners,minimum width=2.55cm,minimum height=0.9cm,text=aggieGray] (down) at (3.8,-1.35) {$S_T=\$80$\\Call payoff $=\$0$};
+        \draw[->,thick,green!50!black] (zero) -- node[pos=0.18,above=8pt,fill=white,inner sep=1pt,font=\scriptsize,text=green!40!black] {50\% pricing weight} (up);
+        \draw[->,thick,aggieGray] (zero) -- node[pos=0.18,below=8pt,fill=white,inner sep=1pt,font=\scriptsize,text=aggieGray] {50\% pricing weight} (down);
+      \end{tikzpicture}
     \end{column}
-    \begin{column}{0.47\textwidth}
-      \begin{block}{Risk-neutral probabilities}
-        Are pricing weights consistent with traded-asset prices and no-arbitrage.
-      \end{block}
+    \begin{column}{0.46\textwidth}
+      \begin{center}
+        \Large $\displaystyle \boxed{0.5(\$20)+0.5(\$0)=\$10}$
+      \end{center}
     \end{column}
   \end{columns}
-  \vspace{0.2cm}
-  \begin{block}{No-arbitrage condition}
-    $S_d<S_0e^{rT}<S_u$ ensures $0<q<1$. These weights arise from replication, not from forecasting the next stock move.
-  \end{block}
+  \vspace{0.15cm}
+
+  \centering These are risk-neutral pricing weights, not predictions of the stock's actual chances of rising or falling.
+  \vspace{0.15cm}
+
+
+  \begin{center}
+    \Large $\displaystyle V_0=e^{-rT}[qV_u+(1-q)V_d]$
+  \end{center}
+  \centering\small Expected future payoff, discounted to today.
 \end{frame}
 
 \begin{frame}{Extending to Multiple Time Steps}
@@ -218,67 +247,92 @@
 \end{frame}
 
 \begin{frame}{From Binomial Trees to Black--Scholes}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.45\textwidth}
-      \begin{block}{Discrete binomial model}
-        Stock prices move up or down at individual time steps.
-      \end{block}
-      \centering\Large More steps, smaller $\Delta t$
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.27\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.58cm,y=0.58cm,>=stealth]
+        \foreach \x/\y in {0/0,1/1,1/-1,2/2,2/0,2/-2,3/3,3/1,3/-1,3/-3}
+          \fill[aggieMaroon] (\x,\y) circle (1.5pt);
+        \foreach \a/\b/\c/\d in {0/0/1/1,0/0/1/-1,1/1/2/2,1/1/2/0,1/-1/2/0,1/-1/2/-2,2/2/3/3,2/2/3/1,2/0/3/1,2/0/3/-1,2/-2/3/-1,2/-2/3/-3}
+          \draw[gray] (\a,\b)--(\c,\d);
+      \end{tikzpicture}
+
+      \small Few steps
     \end{column}
-    \begin{column}{0.08\textwidth}
-      \vspace{0.7cm}\centering\Large $\rightarrow$
+    \begin{column}{0.07\textwidth}
+      \centering\Large $\longrightarrow$
     \end{column}
-    \begin{column}{0.45\textwidth}
-      \begin{block}{Continuous-time model}
-        Stock prices evolve continuously under a stochastic process.
-      \end{block}
+    \begin{column}{0.27\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.43cm,y=0.52cm]
+        \draw[aggieMaroon,thick] (0,0) -- (.5,.35) -- (1,.1) -- (1.5,.5) -- (2,.25) -- (2.5,.65) -- (3,.35) -- (3.5,.7) -- (4,.5) -- (4.5,.85) -- (5,.6);
+        \draw[aggieMaroon,thick] (0,0) -- (.5,-.25) -- (1,.15) -- (1.5,-.2) -- (2,.1) -- (2.5,-.15) -- (3,.2) -- (3.5,-.1) -- (4,.25) -- (4.5,0) -- (5,.3);
+        \draw[aggieMaroon,thick] (0,0) -- (.5,.05) -- (1,-.35) -- (1.5,-.1) -- (2,-.45) -- (2.5,-.2) -- (3,-.55) -- (3.5,-.3) -- (4,-.65) -- (4.5,-.4) -- (5,-.75);
+        \draw[aggieMaroon,thick] (0,0) -- (.5,.3) -- (1,.55) -- (1.5,.3) -- (2,.7) -- (2.5,.95) -- (3,.65) -- (3.5,1.05) -- (4,.8) -- (4.5,1.15) -- (5,.95);
+      \end{tikzpicture}
+
+      \small Many smaller steps
+    \end{column}
+    \begin{column}{0.07\textwidth}
+      \centering\Large $\longrightarrow$
+    \end{column}
+    \begin{column}{0.27\textwidth}
+      \centering
+      \begin{tikzpicture}[x=0.43cm,y=0.52cm]
+        \draw[->,gray] (0,-1) -- (0,1.5);
+        \draw[->,gray] (0,0) -- (5.2,0);
+        \draw[green!50!black,thick] plot[smooth] coordinates {(0,0) (.5,.3) (1,.1) (1.5,.55) (2,.35) (2.5,.8) (3,.65) (3.5,1.1) (4,.85) (4.5,1.25) (5,1.05)};
+        \draw[aggieMaroon,thick] plot[smooth] coordinates {(0,0) (.5,-.2) (1,.15) (1.5,-.15) (2,.05) (2.5,-.25) (3,.1) (3.5,-.1) (4,.2) (4.5,0) (5,.3)};
+        \draw[aggieGray,thick] plot[smooth] coordinates {(0,0) (.5,.05) (1,-.3) (1.5,-.1) (2,-.45) (2.5,-.2) (3,-.55) (3.5,-.3) (4,-.65) (4.5,-.4) (5,-.75)};
+      \end{tikzpicture}
+
+      \small Continuous-time model
     \end{column}
   \end{columns}
-  \vspace{0.35cm}
-  Under an appropriate parameterization, the binomial price converges to the Black--Scholes--Merton price as the number of steps grows.
+  \vspace{0.45cm}
+  \begin{center}
+    When we make the time steps smaller and scale the possible movements correctly, binomial option prices approach Black--Scholes prices.
+  \end{center}
 \end{frame}
 
-\begin{frame}{Black--Scholes--Merton: Equation and Price}
-  \small
-  Continuous-time delta hedging and no-arbitrage lead to
-  \begin{align*}
-    \frac{\partial V}{\partial t}+\frac{1}{2}\sigma^2S^2\frac{\partial^2V}{\partial S^2}+rS\frac{\partial V}{\partial S}-rV=0.
-  \end{align*}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.52\textwidth}
-      For a European call with no dividends,
-      \begin{align*}
-        C&=S_0N(d_1)-Ke^{-rT}N(d_2),\\
-        d_1&=\frac{\ln(S_0/K)+(r+\sigma^2/2)T}{\sigma\sqrt{T}},\quad d_2=d_1-\sigma\sqrt{T}.
-      \end{align*}
+\begin{frame}{How Black--Scholes Calculates an Option Price}
+  \begin{columns}[c,onlytextwidth]
+    \begin{column}{0.28\textwidth}
+      \centering
+      \begin{tikzpicture}[every node/.style={align=center,font=\small}]
+        \node[draw=aggieMaroon,rounded corners,minimum width=3cm,minimum height=1cm] {1. Model possible\\future stock prices};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.06\textwidth}
+      \centering\Large $\longrightarrow$
+    \end{column}
+    \begin{column}{0.28\textwidth}
+      \centering
+      \begin{tikzpicture}[every node/.style={align=center,font=\small}]
+        \node[draw=aggieMaroon,rounded corners,minimum width=3cm,minimum height=1cm] {2. Calculate their\\option payoffs};
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.06\textwidth}
+      \centering\Large $\longrightarrow$
+    \end{column}
+    \begin{column}{0.28\textwidth}
+      \centering
+      \begin{tikzpicture}[every node/.style={align=center,font=\small}]
+        \node[draw=aggieMaroon,rounded corners,minimum width=3cm,minimum height=1cm] {3. Weight and\\discount to today};
+      \end{tikzpicture}
     \end{column}
   \end{columns}
-\end{frame}
+  \vspace{0.45cm}
+  \begin{center}
+    \Large $\displaystyle C_0=e^{-rT}\mathbb{E}^{\mathbb{Q}}[\max(S_T-K,0)]$
+  \end{center}
+  \centering\small Expected call payoff, using risk-neutral probabilities, discounted to today.
+  \vspace{0.4cm}
 
-\begin{frame}{What Does Black--Scholes Actually Tell Us?}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{It calculates}
-        A theoretical arbitrage-free option premium under its assumptions.
-      \end{block}
-      \vspace{0.25cm}
-      \begin{align*}
-        C_T&=\max(S_T-K,0),\\
-        P_T&=\max(K-S_T,0).
-      \end{align*}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{It does not calculate}
-        A prediction of the realized stock price at expiration.
-      \end{block}
-      \vspace{0.25cm}
-      Terminal payoff depends on the unknown $S_T$. A traded market premium can differ from the model price.
-    \end{column}
-  \end{columns}
-  \vspace{0.3cm}
-  \begin{block}{Keep the terms separate}
-    The premium is the upfront price of the contract, not a fee added to its theoretical value.
-  \end{block}
+  \centering The resulting Black--Scholes call price
+  \begin{center}
+    \Large $\displaystyle \boxed{C_0=S_0N(d_1)-Ke^{-rT}N(d_2)}$
+  \end{center}
 \end{frame}
 
 \begin{frame}{The Greeks: Sensitivities of Option Value}
@@ -325,14 +379,6 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Practical Applications: The Options Chain Speaks}
-\end{frame}
-
-\begin{frame}[plain]
-  \centering
-  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{teamprogress.png}
-\end{frame}
-
 \begin{frame}{Practical Applications: Reading an Options Surface}
   \begin{columns}[T,onlytextwidth]
     \begin{column}{0.62\textwidth}
@@ -355,43 +401,9 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{From the Volatility Surface to a Market-Implied PDF}
-  \begin{columns}[T,onlytextwidth]
-    \begin{column}{0.64\textwidth}
-      \centering
-      \includegraphics[width=\linewidth,height=6.05cm,keepaspectratio]{nvda_market_distribution_2026-12-18.png}
-    \end{column}
-    \begin{column}{0.33\textwidth}
-      \scriptsize
-      \begin{block}{How the PDF was generated}
-        First, smooth implied volatility across strikes and use Black--Scholes to produce a call-price curve $C(K)$.
-        \[
-          q(K)=e^{rT}\frac{\partial^2 C}{\partial K^2}.
-        \]
-        Take the second derivative of the call-premium chain across strikes. After adjusting for discounting and normalizing the result, the curvature can be expressed as market-implied probabilities for different NVDA prices at expiration.
-      \end{block}
-    \end{column}
-  \end{columns}
-\end{frame}
-
 \begin{frame}[plain]
   \centering
-  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{brkb_market_distribution_2026-12-18.png}
-\end{frame}
-
-\begin{frame}[plain]
-  \centering
-  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{intc_market_distribution_2026-12-18.png}
-\end{frame}
-
-\begin{frame}[plain]
-  \centering
-  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{mu_market_distribution_2026-12-18.png}
-\end{frame}
-
-\begin{frame}[plain]
-  \centering
-  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{adbe_market_distribution_2026-12-18.png}
+  \includegraphics[width=\textwidth,height=0.96\paperheight,keepaspectratio]{teamprogress.png}
 \end{frame}
 
 \begin{frame}{The Volatility Smirk: Why Downside Skew Exists}
@@ -483,6 +495,14 @@
   \begin{block}{At expiration}
     Max profit occurs when SPY finishes between the two short strikes (\$767--\$777). Beyond either long wing, the loss is capped at \$122 per 1-lot.
   \end{block}
+\end{frame}
+
+\appendix
+\begin{frame}{Appendix: Risk-Neutral Pricing Weight}
+  \begin{center}
+    \Large $\displaystyle q=\frac{S_0e^{rT}-S_d}{S_u-S_d}$
+  \end{center}
+  The pricing weights $q$ and $1-q$ make the discounted expected future stock price equal to today's stock price.
 \end{frame}
 
 \end{document}
